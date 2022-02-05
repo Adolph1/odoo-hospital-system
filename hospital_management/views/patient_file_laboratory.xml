@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <!-- Tree view -->
+        <record id="patient_file_laboratory_tree_view" model="ir.ui.view">
+            <field name="name">patient.file.laboratory.tree.view</field>
+            <field name="model">patient.file.laboratory</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Laboratory services" editable="bottom">
+                    <field name="item_id" />
+                    <field name="quantity" />
+                    <field name="price" />
+                    <field name="total" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="patient_file_laboratory_form_view" model="ir.ui.view">
+             <field name="name">patient.file.laboratory.form.view</field>
+            <field name="model">patient.file.laboratory</field>
+            <field name="arch" type="xml">
+                <form string="Laboratory services" editable="bottom">
+                    <group  col="4">
+                        <field name="item_id"/>
+                        <field name="quantity"/>
+                        <field name="price"/>
+                        <field name="total"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+</odoo>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="hospital_clinic_action_dashboard" model="ir.actions.act_window">
+            <field name="name">Clinics</field>
+            <field name="res_model">hospital.clinic</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+        <!--tree view of the patient model-->
+        <record id="clinic_tree" model="ir.ui.view">
+            <field name="name">hospital.clinic.tree</field>
+            <field name="model">hospital.clinic</field>
+            <field name="arch" type="xml">
+                <tree string="Clinics">
+                    <field name="name"/>
+                    <field name="location"/>
+                </tree>
+            </field>
+        </record>
+    </data>
+</odoo>

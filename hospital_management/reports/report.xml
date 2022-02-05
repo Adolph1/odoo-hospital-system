@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <report
+        id="report_patient_billing_details"
+        string="Patient Billing"
+        model="patient.billing"
+        report_type="qweb-pdf"
+        name="hospital_management.report_patient_billing"
+        file="hospital_management.report_patient_billing"/>
+
+</odoo>

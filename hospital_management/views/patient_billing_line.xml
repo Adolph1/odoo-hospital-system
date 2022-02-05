@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+        <!-- Tree view -->
+        <record id="patient_billing_line_tree_view" model="ir.ui.view">
+            <field name="name">patient.billing.line.tree.view</field>
+            <field name="model">patient.billing.line</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Billing lines" editable="bottom">
+                    <field name="department_id" />
+                    <field name="item_id" />
+                    <field name="quantity" />
+                    <field name="price" />
+                    <field name="total" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="patient_billing_line_form_view" model="ir.ui.view">
+            <field name="name">patient.billing.line.form.view</field>
+            <field name="model">patient.billing.line</field>
+            <field name="arch" type="xml">
+                <form string="Billing" editable="bottom">
+                    <group  col="4">
+                        <field name="department_id" />
+                        <field name="item_id"/>
+                        <field name="quantity"/>
+                        <field name="price"/>
+                        <field name="total"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+</odoo>

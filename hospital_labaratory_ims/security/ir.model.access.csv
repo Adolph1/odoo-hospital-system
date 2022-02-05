@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_laboratory_test,access.laboratory.test,model_laboratory_test,group_hospital_lab_manager,1,1,1,1
+access_laboratory_test,access.laboratory.test,model_laboratory_test,group_hospital_lab,1,1,1,1
+access_lab_request,access.laboratory.request,model_laboratory_request,group_hospital_lab,1,1,1,1
+

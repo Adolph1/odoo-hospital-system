@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="new_patient_action" model="ir.actions.act_window">
+            <field name="name">New Patient</field>
+            <field name="res_model">patient</field>
+            <field name="view_mode">form</field>
+
+        </record>
+
+                <!--tree view of the patient model-->
+        <record id="patient_form" model="ir.ui.view">
+            <field name="name">patient.form</field>
+            <field name="model">patient</field>
+            <field name="arch" type="xml">
+                <form string="Patients">
+
+                    <sheet>
+                         <div class="oe_title">
+                        <h1>
+                            <field name="patient_medical_number"/>
+                        </h1>
+                    </div>
+                           <field name="photo" nolabel="1"
+                            class="oe_left oe_avatar" img_width="120"
+                            img_height="120" width="120" height="120"
+                            widget="image" />
+
+                      <group>
+                            <group>
+
+                                <field name="first_name"/>
+                                <field name="middle_name"/>
+                                <field name="last_name"/>
+                                <field name="date_of_birth"/>
+                                <field name="age"/>
+                                <field name="gender"/>
+                                <field name="area"/>
+                                <field name="clinic_id"/>
+                            </group>
+                          <group>
+                                <field name="occupation"/>
+                                <field name="patient_contact"/>
+                                <field name="next_of_kin"/>
+                                <field name="marital_status"/>
+                                <field name="residential_address"/>
+                            </group>
+                      </group>
+                     </sheet>
+                </form>
+            </field>
+        </record>
+
+    </data>
+</odoo>

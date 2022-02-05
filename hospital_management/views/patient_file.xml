@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="hospital_patients_files_action" model="ir.actions.act_window">
+            <field name="name">Patients Files</field>
+            <field name="res_model">patient.file</field>
+            <field name="view_mode">tree,form,kanban</field>
+
+        </record>
+        <!--tree view of the patient file model-->
+        <record id="patient_file_tree" model="ir.ui.view">
+            <field name="name">hospital.patient.file.tree</field>
+            <field name="model">patient.file</field>
+            <field name="arch" type="xml">
+                <tree string="Patients File">
+                    <field name="file_ref_no"/>
+                    <field name="opening_date"/>
+                    <field name="patient_id"/>
+                    <field name="mr_number"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+        <record id="patient_file_form" model="ir.ui.view">
+            <field name="name">hospital.patient.file.form</field>
+            <field name="model">patient.file</field>
+            <field name="arch" type="xml">
+
+                <form string="Patients File">
+                    <header>
+                        <button name="action_confirm" type="object" string="Confirm" class="oe_highlight"
+                                states="opened"/>
+                        <field name="state" widget="statusbar" statusbar_visible="opened,virtual,doctor"/>
+                    </header>
+                    <sheet>
+
+                        <separator string="PATIENT HISTORY AND MANAGEMENT PLAN" colspan="6" class="oe_center"/>
+                        <newline/>
+                        <group>
+
+
+                            <group>
+                                <field name="height"/>
+                                <field name="weight"/>
+                                <field name="bmi"/>
+                                <field name="triage_time"/>
+                                <field name="bp_systolic"/>
+                                <field name="pulse"/>
+                                <field name="raspiratory_rate"/>
+                                <field name="spo"/>
+                                <field name="temp"/>
+                                <field name="ambulation"/>
+                                <field name="infection_disease"/>
+                                <field name="consultant_name"/>
+                            </group>
+                             <group>
+                                <field name="file_ref_no"/>
+                                <field name="opening_date"/>
+                                <field name="patient_id"/>
+                                <field name="mr_number"/>
+                                <field name="age"/>
+                                <!--                                <field name="gender"/>-->
+                                <field name="contact"/>
+
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page string="General Information">
+                                <group>
+                                    <separator colspan="4" string="A.Chief complaint (CC)"/>
+                                    <newline/>
+                                    <field colspan="6" name="chief_complaint"
+                                           nolabel="1"/>
+                                </group>
+
+                                <group>
+                                    <separator colspan="4" string="B.History of present illness(HPI)"/>
+                                    <newline/>
+                                    <field colspan="6" name="present_illness_history"
+                                           nolabel="1"/>
+                                </group>
+                                <group>
+                                    <separator colspan="4" string="C.Medications/Immunization/Diet /Allergies"/>
+                                    <newline/>
+                                    <field colspan="6" name="medication_allergies"
+                                           nolabel="1"/>
+                                </group>
+                                <group>
+                                    <separator colspan="4" string="D.Physical examination"/>
+                                    <newline/>
+                                    <field colspan="6" name="physical_examination"
+                                           nolabel="1"/>
+                                </group>
+                                <group>
+                                    <separator colspan="4" string="E.Provisional Diagnosis"/>
+                                    <newline/>
+                                    <field colspan="6" name="provisional_diagnosis"
+                                           nolabel="1"/>
+                                </group>
+                                <group>
+                                    <separator colspan="4" string="F.Investigations"/>
+                                    <newline/>
+                                    <field colspan="6" name="investigations"
+                                           nolabel="1"/>
+                                </group>
+                                <group>
+                                    <separator colspan="4" string="G.Final diagnosis"/>
+                                    <newline/>
+                                    <field colspan="6" name="final_diagnosis"
+                                           nolabel="1"/>
+                                </group>
+
+                                <group>
+                                    <separator colspan="4" string="H.Treatment plan/Drugs"/>
+                                    <newline/>
+                                    <field colspan="6" name="treatment_plan"
+                                           nolabel="1"/>
+                                </group>
+                            </page>
+                            <page string="Laboratory">
+                                <group string="Laboratory Services">
+                                    <field name="laboratory_lines"
+                                           nolabel="1" widget="one2many_list"/>
+
+
+                                </group>
+
+                            </page>
+                            <page string="Pharmacy">
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

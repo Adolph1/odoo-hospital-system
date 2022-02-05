@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_patient_billing">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <div class="oe_structure"/>
+                        <div class="row">
+                            <div class="col-xs-2" style="margin:auto;">
+                                <center>
+                                <div class="col-xs-12" style="margin:auto">
+                                    <table class="table table-condensed">
+                                         <tr>
+                                            <td><strong>First Name:<span t-field="o.patient_id.first_name"/></strong></td>
+                                            <td><strong>Last Name:<span t-field="o.patient_id.last_name"/></strong></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Billing Number:<span t-field="o.bill_ref_no"/></strong></td>
+                                            <td><strong>Billing Date:<span t-field="o.billing_date"/></strong></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                </center>
+                            </div>
+                        </div>
+
+                    </div>
+                     <div class="row">
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th style="text-align:left;"><strong>Quantity </strong></th>
+                                    <th style="text-align:left;"><strong>Price </strong></th>
+                                    <th style="text-align:left;"><strong>Total </strong></th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="bills" t-as="o">
+                                    <tr>
+                                        <td style="text-align:left;">
+                                            <t t-esc="o['quantity']"/>
+                                        </td>
+                                        <td style="text-align:left;">
+                                            <t t-esc="o['price']"/>
+                                        </td>
+                                         <td style="text-align:left;">
+                                             <span t-field="o.total"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+
+        </t>
+    </template>
+
+
+
+</odoo>

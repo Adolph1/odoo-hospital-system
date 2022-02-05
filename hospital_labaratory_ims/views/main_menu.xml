@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <menuitem
+                id="main_menu_hos_lab_management"
+                name="Laboratory"
+                web_icon="hospital_laboratory_ims,static/description/icon.png"
+                groups="base.group_user"/>
+
+        <menuitem name="Configuration"
+                  id="main_menu_configuration"
+                  parent="main_menu_hos_lab_management"
+                  sequence='13'/>
+
+          <menuitem id="menu_requests" string="Requests" name='Requests'
+                  action="lab_requests_action"
+                  parent="main_menu_hos_lab_management" sequence="0"/>
+
+        <menuitem id="menu_tests" string="Tests" name='Tests'
+                  action="lab_tests_action"
+                  parent="main_menu_configuration" sequence="0"/>
+
+
+
+
+    </data>
+
+</odoo>

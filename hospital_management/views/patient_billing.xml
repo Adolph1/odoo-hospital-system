@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="hospital_action_patient_billing" model="ir.actions.act_window">
+            <field name="name">Patients Billings</field>
+            <field name="res_model">patient.billing</field>
+            <field name="view_mode">tree,form,kanban</field>
+
+        </record>
+        <!--tree view of the patient model-->
+        <record id="patient_billing_tree" model="ir.ui.view">
+            <field name="name">hospital.patient.billing.tree</field>
+            <field name="model">patient.billing</field>
+            <field name="arch" type="xml">
+                <tree string="Patients Billing">
+                    <field name="bill_ref_no"/>
+                   <field name="patient_id" />
+                    <field name="billing_date"/>
+                     <field name="payment_type"/>
+                     <field name="mr_number"/>
+                </tree>
+            </field>
+        </record>
+
+                <!--tree view of the patient model-->
+        <record id="patient_billing_form" model="ir.ui.view">
+            <field name="name">patient.billing.form</field>
+            <field name="model">patient.billing</field>
+            <field name="arch" type="xml">
+                <form string="Patients Billing">
+                    <header>
+                        <button name="print_report" type="object" string="Print" class="oe_highlight"/>
+
+                    </header>
+                     <sheet>
+                         <div class="oe_title">
+                        <h1>
+                            <field name="bill_ref_no"/>
+                        </h1>
+                    </div>
+
+                      <group>
+                            <group>
+                                <field name="mr_number"/>
+                                <field name="patient_id" invisible="1"/>
+                                <field name="id" invisible="1"/>
+                                <field name="payment_type"/>
+                                <field name="billing_date"/>
+                                <field name="journal_id"/>
+                            </group>
+                                <group>
+                                    <field name="patient_name"/>
+                                    <field name="date_of_birth"/>
+                                    <field name="age"/>
+                                    <field name="gender"/>
+                                    <field name="contact"/>
+
+                                </group>
+
+
+
+                      </group>
+                           <group string="Billing Services">
+                            <field name="billing_line_ids" nolabel="1" widget="one2many_list" />
+<!--                            <field name="billing_line_ids_new" nolabel="1" widget="one2many_list" />-->
+
+
+                        </group>
+                         <group>
+                             <group></group>
+                         <group>
+                             <field name="total_amount" class="oe_right"/>
+                         </group>
+                         </group>
+                     </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+    </data>
+</odoo>

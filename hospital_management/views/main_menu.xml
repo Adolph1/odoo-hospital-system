@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <menuitem
+                id="main_menu_hospital_management"
+                name="Medical Records"
+                web_icon="hospital_management,static/description/icon.png"
+                groups="base.group_user"/>
+
+
+        <menuitem id="menu_patients" string="Patients" name='Patients'
+                  action="hospital_action_dashboard"
+                  parent="main_menu_hospital_management" sequence="0"/>
+
+         <menuitem id="menu_patients_file" string="Out Patients Files" name='Out Patients Files'
+                  action="hospital_patients_files_action"
+                  parent="main_menu_hospital_management" sequence="2"/>
+
+         <menuitem id="menu_new_patient" string="New Patient" name='New Patient'
+                  action="new_patient_action"
+                  parent="menu_patients" sequence="1"/>
+
+            <menuitem name="Configuration"
+                  id="main_menu_configuration"
+                  parent="main_menu_hospital_management"
+                  sequence='13'/>
+
+         <menuitem id="menu_view_patient" string="View Patient" name='View Patient'
+                  action="hospital_action_dashboard"
+                  parent="menu_patients" sequence="2"/>
+
+         <menuitem id="menu_patients_billings" string="Patients Billings" name='Billings'
+                  parent="main_menu_hospital_management" sequence="1"/>
+
+        <menuitem id="menu_new_patient_bill" string="New Bill" name='New Bill'
+                  action="new_patient_bill_action"
+                  parent="menu_patients_billings" sequence="1"/>
+
+         <menuitem id="menu_view_patient_bill" string="New Bill" name='View Bills'
+                  action="hospital_action_patient_billing"
+                  parent="menu_patients_billings" sequence="2"/>
+
+
+
+<!--        <menuitem id="menu_patients_appointment" string="Appointments" name='Appointments'-->
+<!--                  action="hospital_appointment_action"-->
+<!--                  parent="main_menu_hospital_management" sequence="1"/>-->
+
+
+        <menuitem name="Laboratory"
+                  id="main_menu_conf_laboratory"
+                  parent="main_menu_configuration"
+                  sequence='14'/>
+
+        <menuitem id="menu_nursing" name="Nursing"
+                  parent="main_menu_hospital_management"
+                  sequence="8"/>
+
+        <menuitem id="menu_appointment" string="Appointments"
+                  name='Appointments' parent="main_menu_hospital_management" sequence="1"/>
+
+        <menuitem id="menu_medical_health_service" string="Medical Service"
+                  name='Medical Service' parent="main_menu_hospital_management"
+                  sequence="11"/>
+
+        <menuitem id="menu_inpatient_administration" name="Inpatient Administration"
+                  parent="main_menu_hospital_management" sequence='2'/>
+
+
+
+        <menuitem name="Pediatrics" id="main_menu_pediatrics"
+                  parent="main_menu_hospital_management"
+                  sequence="6"/>
+
+
+        <menuitem id="menu_medical_paper_archive" string="Archive"
+                  name='Archive' parent="main_menu_hospital_management" sequence="4"/>
+
+        <menuitem id="menu_medical_surgery" string="Surgery"
+                  name='Surgery' parent="main_menu_hospital_management"
+                  sequence="9"/>
+
+        <menuitem id="menu_genetic" name="Genetics"
+                  parent="main_menu_configuration" sequence='10'/>
+
+
+        <menuitem id="menu_intensive_care" name="Intensive Care"
+                  parent="menu_inpatient_administration"/>
+
+        <menuitem id="menu_medical_management" name="Medical"/>
+
+        <menuitem id="menu_insurance"
+                  name="Insurances"
+                  parent="main_menu_configuration"
+                  sequence='9'/>
+
+
+             <menuitem id="menu_physician"
+                  string="Physicians"
+                  name='Physicians'
+                  action="action_hospital_physician"
+                  parent="main_menu_configuration"
+                  sequence="7" />
+
+        <menuitem id="menu_clinic"
+                  name="Clinics"
+                  action="hospital_clinic_action_dashboard"
+                  parent="main_menu_configuration"
+                  sequence='11'/>
+
+
+
+         <menuitem id="menu_department"
+                  string="Departments"
+                  name='Departments'
+                  action="hospital_department_action"
+                  parent="main_menu_configuration"
+                  sequence="12" />
+
+
+
+    </data>
+
+</odoo>

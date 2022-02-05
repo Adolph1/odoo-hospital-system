@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="lab_tests_action" model="ir.actions.act_window">
+            <field name="name">Lab Tests</field>
+            <field name="res_model">laboratory.test</field>
+            <field name="view_mode">tree,form,kanban</field>
+
+        </record>
+        <!--tree view of the patient model-->
+        <record id="lab_tests_tree" model="ir.ui.view">
+            <field name="name">lab.tests.tree</field>
+            <field name="model">laboratory.test</field>
+            <field name="arch" type="xml">
+                <tree string="Lab Tests">
+                        <field name="name"/>
+                </tree>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record id="hospital_department_action" model="ir.actions.act_window">
+            <field name="name">Departments</field>
+            <field name="res_model">hospital.department</field>
+            <field name="view_mode">tree,form</field>
+
+        </record>
+        <!--tree view of the department model-->
+        <record id="department_tree" model="ir.ui.view">
+            <field name="name">hospital.department.tree</field>
+            <field name="model">hospital.department</field>
+            <field name="arch" type="xml">
+                <tree string="Departments">
+                    <field name="name"/>
+                    <field name="manager"/>
+                </tree>
+            </field>
+        </record>
+
+          <!--form view of the department model-->
+        <record id="department_from_view" model="ir.ui.view">
+            <field name="name">hospital.department.form</field>
+            <field name="model">hospital.department</field>
+            <field name="arch" type="xml">
+                <form string="Departments">
+                    <group>
+                        <field name="name"/>
+                        <field name="manager"/>
+                    </group>
+
+                    <group string="Services">
+                        <field name="service_line_ids"
+                               nolabel="1" widget="one2many_list"/>
+
+                    </group>
+                </form>
+            </field>
+        </record>
+
+
+    </data>
+</odoo>
